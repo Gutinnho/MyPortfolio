@@ -1,0 +1,142 @@
+@import '@/styles/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 2.4rem 2.4rem 0.7rem 0;
+
+  background-color: $dark-secondary-color;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 8.2rem;
+    grid-template-areas: 'B C';
+
+    padding: 2.4rem 0 0 0;
+
+    background-color: initial;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 10% 40% 1fr;
+      grid-template-rows: 9.6rem;
+      grid-template-areas: 'A B C';
+    }
+  }
+
+  &_button {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &_line {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: initial;
+
+      position: relative;
+      z-index: 2;
+      right: -1rem;
+
+      border-bottom: 2px dashed $primary-color;
+
+      grid-area: B;
+    }
+  }
+
+  &_bgList {
+    background-color: (($dark-secondary-color) + f1);
+    backdrop-filter: blur(40.7742px);
+    height: 100%;
+    width: 22.4rem;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    @media (min-width: 768px) {
+      position: static;
+      z-index: 1;
+
+      gap: 3rem;
+      padding: 0 1rem 0 0;
+
+      height: 100%;
+      width: 100%;
+
+      grid-area: C;
+    }
+  }
+
+  &_list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+
+    gap: 3rem;
+    padding: 13rem 0 0 5rem;
+
+    height: 100%;
+    width: 22.4rem;
+
+    background-color: transparent;
+
+    @media (min-width: 768px) {
+      grid-area: C;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: row;
+
+      position: static;
+      z-index: 1;
+
+      gap: 3rem;
+      padding: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background-color: transparent;
+    }
+
+    &__item {
+      list-style: none;
+
+      p {
+        display: flex;
+        justify-content: flex-start;
+
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.27rem;
+
+        gap: 1rem;
+
+        font-weight: 700;
+
+        color: white;
+
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
