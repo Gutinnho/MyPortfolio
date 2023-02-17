@@ -1,0 +1,24 @@
+@import '@/styles/variables';
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
+
+  width: 4rem;
+
+  &_links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+    &__icon {
+      color: $secondary-color;
+    }
+  }
+}

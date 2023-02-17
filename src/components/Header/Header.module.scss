@@ -6,27 +6,39 @@
   justify-content: flex-end;
 
   padding: 2.4rem 2.4rem 0.7rem 0;
+  z-index: 5;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 100%;
 
   background-color: $dark-secondary-color;
 
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 40% 1fr;
-    grid-template-rows: 8.2rem;
+    grid-template-rows: 7.2rem;
     grid-template-areas: 'B C';
 
-    padding: 2.4rem 0 0 0;
+    padding: 0 0 0 0;
 
     background-color: initial;
 
     @media (min-width: 1024px) {
       grid-template-columns: 10% 40% 1fr;
-      grid-template-rows: 9.6rem;
+      grid-template-rows: 7.2rem;
       grid-template-areas: 'A B C';
+
+      padding: 1.8rem 0 0 0;
     }
   }
 
   &_button {
+    position: relative;
+    z-index: 6;
+
     @media (min-width: 768px) {
       display: none;
     }
@@ -39,7 +51,7 @@
       display: initial;
 
       position: relative;
-      z-index: 2;
+      z-index: 6;
       right: -1rem;
 
       border-bottom: 2px dashed $primary-color;
@@ -54,16 +66,12 @@
     height: 100%;
     width: 22.4rem;
 
-    position: absolute;
-    z-index: -1;
+    position: fixed;
+    z-index: 4;
     top: 0;
     right: 0;
     @media (min-width: 768px) {
       position: static;
-      z-index: 1;
-
-      gap: 3rem;
-      padding: 0 1rem 0 0;
 
       height: 100%;
       width: 100%;
@@ -79,7 +87,7 @@
     flex-direction: column;
 
     position: absolute;
-    z-index: -1;
+    z-index: 5;
     top: 0;
     right: 0;
 
@@ -98,9 +106,6 @@
       align-items: center;
       justify-content: space-evenly;
       flex-direction: row;
-
-      position: static;
-      z-index: 1;
 
       gap: 3rem;
       padding: 0;

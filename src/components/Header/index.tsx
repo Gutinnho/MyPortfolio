@@ -1,9 +1,11 @@
-import Link from '@/components/Link';
 import styles from './Header.module.scss';
-import { Barlow_Condensed } from '@next/font/google';
-import { List, X } from 'phosphor-react';
-import { useEffect, useRef, useState } from 'react';
+
+import Link from '@/components/Link';
+
 import classNames from 'classnames';
+import { useEffect, useState } from 'react';
+import { List, X } from 'phosphor-react';
+import { Barlow_Condensed } from '@next/font/google';
 
 const font = Barlow_Condensed({
 	weight: ['300', '400', '500', '700'],
