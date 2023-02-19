@@ -1,0 +1,59 @@
+@import '@/styles/variables';
+
+.introduction {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 6rem;
+  padding-left: 4.8rem;
+  margin-top: 20rem;
+
+  &_balloon {
+    display: flex;
+
+    position: relative;
+    bottom: -1rem;
+
+    &__cloud {
+      position: relative;
+      z-index: -1;
+
+      width: 18rem;
+      height: 9rem;
+
+      path,
+      rect {
+        fill: $secondary-color;
+      }
+    }
+    &__p {
+      position: relative;
+      left: -15rem;
+      top: 1.7rem;
+
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+  }
+
+  &_info {
+    position: relative;
+    left: 1rem;
+    &__name {
+      font-size: 6rem;
+      font-weight: 600;
+    }
+
+    &__occupation {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    gap: 1.6rem;
+  }
+}

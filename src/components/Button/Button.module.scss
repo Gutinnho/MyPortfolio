@@ -1,0 +1,41 @@
+@import '@/styles/variables';
+
+.button {
+  width: 12rem;
+  height: 5rem;
+
+  border-radius: 6px;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  &_content {
+    color: white;
+
+    border: none;
+
+    background-color: $secondary-color;
+    transition: all 0.3s;
+    &:hover {
+      backdrop-filter: brightness(50%);
+      color: white;
+      cursor: pointer;
+
+      background-color: $dark-secondary-color;
+    }
+  }
+
+  &_outlined {
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    background-color: transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      color: white;
+      background-color: $dark-secondary-color;
+      border-color: $dark-secondary-color;
+      cursor: pointer;
+    }
+  }
+}
