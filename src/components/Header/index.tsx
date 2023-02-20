@@ -32,7 +32,7 @@ function Header() {
 			})}>
 			{menuExpanded ? (
 				<X
-					color='#fff'
+					color='white'
 					size={40}
 					weight='regular'
 					onClick={showMenu}
@@ -40,11 +40,11 @@ function Header() {
 				/>
 			) : (
 				<List
-					color='#fff'
+					color='black'
 					size={40}
 					weight='regular'
 					onClick={showMenu}
-					className={styles.header_button}
+					className={styles.header_button__colored}
 				/>
 			)}
 			<div className={styles.header_line}></div>

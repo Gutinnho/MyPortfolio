@@ -14,8 +14,6 @@
 
   width: 100%;
 
-  background-color: $dark-secondary-color;
-
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 40% 1fr;
@@ -39,6 +37,15 @@
     position: relative;
     z-index: 6;
 
+    &__colored{
+      line{
+        stroke: $dark-secondary-color
+      }
+
+      @media (min-width: 768px){
+        display: none;
+      }    }
+
     @media (min-width: 768px) {
       display: none;
     }
@@ -61,8 +68,9 @@
   }
 
   &_bgList {
-    background-color: (($dark-secondary-color) + f1);
-    backdrop-filter: blur(40.7742px);
+    background-color: $dark-secondary-color + f0;
+    backdrop-filter: blur(6px);
+  
     height: 100%;
     width: 22.4rem;
 
