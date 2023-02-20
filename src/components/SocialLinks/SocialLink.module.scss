@@ -17,8 +17,22 @@
     flex-direction: column;
 
     position: relative;
+
+    a{
+      width: 4rem;
+      height: 4rem;  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     &__icon {
       color: $secondary-color;
+      transition: all .3s;
+
+      &:hover{
+        color: $dark-secondary-color;
+      }
     }
   }
 }
