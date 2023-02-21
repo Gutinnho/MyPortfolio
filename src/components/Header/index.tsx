@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { List, X } from 'phosphor-react';
 import { Barlow_Condensed } from '@next/font/google';
+import { useRouter } from 'next/router';
 
 const font = Barlow_Condensed({
 	weight: ['300', '400', '500', '700'],
@@ -13,7 +14,15 @@ const font = Barlow_Condensed({
 });
 
 function Header() {
+	const router = useRouter();
 	const [menuExpanded, setMenuExpanded] = useState<boolean>(false);
+
+	const [route, setRoute] = useState('');
+
+	useEffect(() => {
+		setRoute(router.asPath);
+		console.log(route);
+	}, [router.asPath, route]);
 
 	useEffect(() => {
 		const currentWidth = window.innerWidth;
@@ -59,22 +68,34 @@ function Header() {
 					[styles.header_list]: true,
 					[styles.hidden]: menuExpanded === false,
 				})}>
-				<li className={styles.header_list__item}>
+				<li
+					className={classNames({
+						[styles.header_list__item]: true,
+						[styles.header_list__item___border]: route === '/',
+					})}>
 					<Link href='/'>
 						<p>
 							00<span>Home</span>
 						</p>
 					</Link>
 				</li>
-				<li className={styles.header_list__item}>
-					<Link href='/projects'>
+				<li
+					className={classNames({
+						[styles.header_list__item]: true,
+						[styles.header_list__item___border]: route === '/projects',
+					})}>
+					<Link href='/'>
 						<p>
 							01<span>Projetos</span>
 						</p>
 					</Link>
 				</li>
-				<li className={styles.header_list__item}>
-					<Link href='/skills'>
+				<li
+					className={classNames({
+						[styles.header_list__item]: true,
+						[styles.header_list__item___border]: route === '/skills',
+					})}>
+					<Link href='/'>
 						<p>
 							02<span>Skills</span>
 						</p>

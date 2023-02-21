@@ -2,10 +2,11 @@
 
 .header {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
+  flex-direction: column;
 
-  padding: 2.4rem 2.4rem 0.7rem 0;
+  padding: 2.4rem 0 0 0;
   z-index: 5;
 
   position: fixed;
@@ -19,6 +20,8 @@
     grid-template-columns: 40% 1fr;
     grid-template-rows: 7.2rem;
     grid-template-areas: 'B C';
+
+    align-items: center;
 
     padding: 0 0 0 0;
 
@@ -37,7 +40,11 @@
     position: relative;
     z-index: 6;
 
+    margin: 0 2.4rem 0.7rem 0;
+
     &__colored{
+      margin: 0 2.4rem 0.7rem 0;
+
       line{
         stroke: $dark-secondary-color
       }
@@ -71,6 +78,7 @@
     background-color: $dark-secondary-color + f0;
     backdrop-filter: blur(6px);
   
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.3));
     height: 100%;
     width: 22.4rem;
 
@@ -94,13 +102,13 @@
     justify-content: flex-start;
     flex-direction: column;
 
-    position: absolute;
+    position: relative;
     z-index: 5;
     top: 0;
     right: 0;
 
-    gap: 3rem;
-    padding: 13rem 0 0 5rem;
+    gap: 3.2rem;
+    padding: 11.8rem 0 0 5rem;
 
     height: 100%;
     width: 22.4rem;
@@ -126,6 +134,13 @@
 
     &__item {
       list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      @media(min-width: 768px) {
+        justify-content: center;
+      }
 
       p {
         display: flex;
@@ -142,8 +157,38 @@
 
         color: white;
 
+    
         span {
           font-weight: 400;
+        }
+      }
+      
+      &:hover{
+        border-right: 4px solid #979797;
+        
+        width: 100%;
+        @media(min-width: 768px){
+          width: initial;
+          height: 100%;
+          border-right: none;
+          border: 3px transparent solid;
+          border-bottom: 3px solid #979797;
+        }
+      }
+
+      border: 3px transparent solid;
+
+      &___border{
+        border-right: 4px solid white;
+        
+        width: 100%;
+        @media(min-width: 768px){
+          width: initial;
+          height: 100%;
+
+          border-right: none;
+          border: 3px transparent solid;
+          border-bottom: 3px white solid;
         }
       }
     }

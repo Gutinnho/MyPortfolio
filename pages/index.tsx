@@ -11,9 +11,7 @@ export default function Home() {
 					align-items: center;
 				}
 			`}</style>
-			<Header />
 			<main>
-				<SocialLinks />
 				<Introduction />
 			</main>
 		</div>
